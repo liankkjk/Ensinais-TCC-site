@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/imagens/ensinais-logo.png" type="image/png">
     <title>ENSINAIS</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,15 +21,19 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="/imagens/ensinais-logo.png" alt="Logo" width="140" height="100" class="d-inline-block align-text-top">
+                    <img src="/imagens/ensinais-logo.png" alt="Logo" width="140" height="100"
+                        class="d-inline-block align-text-top">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="#Inicio">Inicio</a>
+                        <a class="nav-link" href="#Sobre">Sobre</a>
                         <a class="nav-link" href="#Contatos">Contatos</a>
+                        <a class="nav-link" href="#Download">Download</a>
                     </div>
                 </div>
             </div>
@@ -37,80 +42,102 @@
 
     <!-- Gráfico -->
     <div class="fundo-pag">
-    <div
-     <div class="text-grafico">
-        <p>Aprenda LIBRAS com a gente!</p>
-     </div>
-        <div class="img-grafico-container">
-            <div class="img-mascote">
-            <img src="./imagens/jonathan.png" alt="">
-        </div> <div class="grafico-container">
-            <p class="grafico-titulo">Gráfico representado a comunidade surda no Brasil:</p>
-            <div class="grafico">
-                <canvas id="grafico1"></canvas>
+        <div>
+            <div class="text-grafico">
+                <p>Aprenda LIBRAS com a gente!</p>
             </div>
-        </div>
-    </div>
+            <div class="img-grafico-container">
+                <div class="img-mascote">
+                    <img src="./imagens/jonathan.png" alt="">
+                </div>
+                <div class="grafico-container">
+                    <p class="grafico-titulo">Gráfico representado a comunidade surda no Brasil:</p>
+                    <div class="grafico">
+                        <canvas id="grafico1"></canvas>
+                    </div>
+                </div>
+            </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script>
-        const ctx = document.getElementById('grafico1');
+            <script>
+                const ctx = document.getElementById('grafico1');
 
-        let labelsX = ["Pessoas com algum grau de deficiência auditiva", "Deficiência auditiva severa", "Deficiência auditiva leve ou moderada"];
-        let valores = ["95", "3.9", "1.1"]; //dados porcentagem
-        new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: labelsX,
-                datasets: [{
-                    label: '# of Votes',
-                    data: valores,
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+                let labelsX = ["Pessoas com algum grau de deficiência auditiva", "Deficiência auditiva severa", "Deficiência auditiva leve ou moderada"];
+                let valores = ["95", "3.9", "1.1"]; //dados porcentagem
+                new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: labelsX,
+                        datasets: [{
+                            label: '# of Votes',
+                            data: valores,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
                     }
-                }
-            }
-        });
-    </script>
-    </div>
-
-    <!-- Conteúdo principal da página(informações, download etc) -->
-    <main>
-        <div class="text-sobre">
-            <h4 id="Sobre">Sobre o Ensinais</h4>
-            <p> O Ensinais - #SinalizandoConhecimento é um aplicativo mobile que busca ensinar a Língua Brasileira de Sinais para todos que desejam aprende-la</p>
+                });
+            </script>
         </div>
 
-        <div class="text-download">
-            <h4>Faça download!</h4>
-            <p> E tenha acesso sobre vários conteúdos sobre LIBRAS! Faça o download do app abaixo:</p>
-            <button>Download</button>
-        </div>
-    </main>
+        <!-- Conteúdo principal da página(informações, download etc) -->
+        <main>
+            <div class="text-sobre">
+                <h4 id="Sobre">Sobre o Ensinais</h4>
+                <p> O Ensinais - #SinalizandoConhecimento é um aplicativo mobile que busca ensinar a Língua Brasileira
+                    de Sinais para todos que desejam aprende-la</p>
+            </div>
 
-    <!-- Informações de contato da empresa -->
-    <footer>
-        <div class="contato">
-            <h4>Entre em contato!</h4>
-            <p> Está com alguma dúvida ou deseja enviar um feedback?</p>
-            <a href="#" target="_blank">
-                <img src="/imagens/email.png" alt="Ícone" class="footer-icon">
-            </a>
-            <a href="#" target="_blank">
-                <img src="/imagens/zap.png" alt="Ícone" class="footer-icon">
-            </a>
-            <p>Nos contate pelo email ou whatsapp!</p>
-        </div>
-    </footer>
+            <div class="text-download" id="Download">
+                <h4>Faça download!</h4>
+                <p> E tenha acesso sobre vários conteúdos sobre LIBRAS! Faça o download do app abaixo:</p>
+                <button>Download</button>
+            </div>
+        </main>
 
-    <!-- Script bootstrap (Não mexer) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- Informações de contato da empresa -->
+        <footer>
+            <div class="contato" id="Contatos">
+                <h4>Entre em contato!</h4>
+                <p> Está com alguma dúvida ou deseja enviar um feedback?</p>
+                <a href="mailto:contatoensinais@ensinais.com.br" target="_blank">
+                    <img src="/imagens/email.png" alt="Ícone" class="footer-icon">
+                </a>
+                <a href="https://wa.link/tcarki" target="_blank">
+                    <img src="/imagens/zap.png" alt="Ícone" class="footer-icon">
+                </a>
+                <p>Nos contate pelo email ou whatsapp!</p>
+            </div>
+        </footer>
+
+        <!-- Script Scroll suave (link interno) -->
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('.navbar-nav a[href^="#"]').on('click', function (e) {
+                    e.preventDefault();
+                    var id = $(this).attr('href');
+                    var targetOffset = $(id).offset().top;
+
+                    $('html, body').animate({
+                        scrollTop: targetOffset - 100
+                    }, 500);
+                });
+            });
+        </script>
+
+        <!-- Script bootstrap (Não mexer) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
