@@ -5,9 +5,9 @@ Desenvolvido como parte do nosso TCC, o site apresenta um aplicativo que ensina 
 O site irá abordar mais sobre o nosso app, contando mais sobre o app e contendo aba para poder se comunicar com os desenvolvedores.
 
 Devs:
-Enzo Lian
-Natanael Morandim
-Ana Laura Ribeiro
-Raíssa Pinheiro
-Nicolas Roberto
+Enzo Lian,
+Natanael Morandim,
+Ana Laura Ribeiro,
+Raíssa Pinheiro,
+Nicolas Roberto e
 Victor Felipe
