@@ -43,17 +43,14 @@
     <!-- Gráfico -->
     <div class="fundo-pag">
         <div id="bg-text">
-            <div class="text-grafico">
-                <p>Aprenda LIBRAS com a gente!</p>
-            </div>
             <div class="img-grafico-container">
-                <div class="img-mascote">
-                    <img src="./imagens/jonathan.png" alt="Imagem do mascote Jonathan, um sagui de pelos e olhos amarelos que usa uma camiseta azul com o sinal para a letra S em LIBRAS estampada.">
-                </div>
+                    <img id="img-mascote" src="./imagens/Jonathan Site.png" alt="Imagem do mascote Jonathan, um sagui de pelos e olhos amarelos que usa uma camiseta azul com o sinal para a letra S em LIBRAS estampada. Jonathan está apontando ao gráfico ao lado direito.">
                 <div class="grafico-container">
-                    <p class="grafico-titulo">Gráfico representando a comunidade surda no Brasil:</p>
+                    <div id="bloco-grafico">
+                        <p class="grafico-titulo">Gráfico representando a comunidade surda no Brasil:</p>
                     <div class="grafico">
-                        <canvas id="grafico1"></canvas>
+                        <canvas alt="Um gráfico apresentando a quantidade de deficientes auditivos no Brasil. " id="grafico1"></canvas>
+                    </div>
                         <span id="fonte-txt">Fonte: <a href="https://www.al.sp.gov.br/noticia/?23/09/2021/dia-internacional-da-linguagem-de-sinais-procura-promover-a-inclusao-de-pessoas-surdas-" target="_blank">www.al.sp.gov.br</a></span>
                     </div>
                 </div>
@@ -64,70 +61,71 @@
             <script>
                 const ctx = document.getElementById('grafico1');
 
-let labelsX = ["População brasileira", "Pessoas com algum grau de deficiência auditiva", "Pessoas com surdez profunda"];
-let valores = [200, 7.3, 2.7];
+    let labelsX = ["População brasileira", "Pessoas com algum grau de deficiência auditiva", "Pessoas com surdez profunda"];
+    let valores = [200, 7.3, 2.7];
 
-let totalPopulacao = 190; 
-let totalSurdos = 7.3;
-let totalSurdosProfundo = 2.7;
+    let totalPopulacao = 190; 
+    let totalSurdos = 7.3;
+    let totalSurdosProfundo = 2.7;
 
-new Chart(ctx, {
-    type: 'pie',
-    data: {
-        labels: labelsX,
-        datasets: [{
-            label: 'Porcentagem',
-            data: [totalPopulacao, totalSurdos, totalSurdosProfundo],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            tooltip: {
-                callbacks: {
-                    label: function(tooltipItem) {
-                        let valueInMillions = tooltipItem.raw;
-                        let total = tooltipItem.dataset.data.reduce((acc, value) => acc + value, 0);
-                        let percentage = (valueInMillions / total) * 100;
-                        return `${tooltipItem.label}: ${percentage.toFixed(1)}% (${valueInMillions.toFixed(1)} milhões)`;
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: labelsX,
+            datasets: [{
+                label: 'Porcentagem',
+                data: [totalPopulacao, totalSurdos, totalSurdosProfundo],
+                borderWidth: 1,
+                backgroundColor: ['rgba(242, 165, 22, 1)', 'rgba(217, 73, 41, 1)', 'rgba(9, 42, 149, 1)']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            let valueInMillions = tooltipItem.raw;
+                            let total = tooltipItem.dataset.data.reduce((acc, value) => acc + value, 0);
+                            let percentage = (valueInMillions / total) * 100;
+                            return `${tooltipItem.label}: ${percentage.toFixed(1)}% (${valueInMillions.toFixed(1)} milhões)`;
+                        }
                     }
-                }
-            },
-            legend: {
-                position: 'top',
-                labels: {
-                    generateLabels: function(chart) {
-                        return [{
-                            text: `População Brasileira: ${totalPopulacao} milhões`,
-                            fillStyle: chart.data.datasets[0].backgroundColor[0], 
-                            fontSize: 12
-                        }, {
-                            text: `Pessoas com algum grau de deficiência auditiva: ${totalSurdos} milhões`,
-                            fillStyle: chart.data.datasets[0].backgroundColor[1],
-                            fontSize: 12
-                        }, {
-                            text: `Pessoas com surdez profunda: ${totalSurdosProfundo} milhões`,
-                            fillStyle: chart.data.datasets[0].backgroundColor[2], 
-                            fontSize: 12
-                        }];
-                    }
-                }
-            },
-            datalabels: {
-                formatter: function(value, context) {
-                    let total = context.dataset.data.reduce((acc, value) => acc + value, 0);
-                    let percentage = Math.round((value / total) * 100);
-                    return `${percentage}% (${value.toFixed(1)} milhões)`;
                 },
-                color: 'black',
-                font: {
-                    weight: 'bold'
+                legend: {
+                    position: 'top',
+                    labels: {
+                        generateLabels: function(chart) {
+                            return [{
+                                text: `População Brasileira: ${totalPopulacao} milhões`,
+                                fillStyle: chart.data.datasets[0].backgroundColor[0], 
+                                fontSize: 12
+                            }, {
+                                text: `Pessoas com algum grau de deficiência auditiva: ${totalSurdos} milhões`,
+                                fillStyle: chart.data.datasets[0].backgroundColor[1],
+                                fontSize: 12
+                            }, {
+                                text: `Pessoas com surdez profunda: ${totalSurdosProfundo} milhões`,
+                                fillStyle: chart.data.datasets[0].backgroundColor[2], 
+                                fontSize: 12
+                            }];
+                        }
+                    }
+                },
+                datalabels: {
+                    formatter: function(value, context) {
+                        let total = context.dataset.data.reduce((acc, value) => acc + value, 0);
+                        let percentage = Math.round((value / total) * 100);
+                        return `${percentage}% (${value.toFixed(1)} milhões)`;
+                    },
+                    color: 'black',
+                    font: {
+                        weight: 'bold'
+                    }
                 }
             }
         }
-    }
-});
+    });
 
             </script>
         </div>
@@ -143,8 +141,21 @@ new Chart(ctx, {
             <div class="bloco-sobre" id="Sobre">
                 <div class="conteúdo">
                     <h4 class="título">Sobre o ENSINAIS</h4>
-                    <p> O <strong>ENSINAIS - #SinalizandoConhecimento</strong> é um aplicativo mobile que busca ensinar a <strong>Língua Brasileira
-                        de Sinais</strong> para todos que desejam aprendê-la</p>
+                    <p> O <strong>ENSINAIS - #SinalizandoConhecimento</strong> é um aplicativo mobile que busca ensinar a <strong>Língua Brasileira de Sinais</strong> para todos que desejam aprendê-la.</p>
+                    <div class="icones">
+                        <div class="bloco-icon">
+                            <img class="icon-app" src="./imagens/Sinalário Site.png" alt="Ícone representando a ferramenta de sinalário do app ENSINAIS, um local onde o usuário poderá consultar sinais caso esteja com dúvida." />
+                            <p>Sinalário</p>
+                        </div>
+                        <div class="bloco-icon">
+                                <img class="icon-app" src="./imagens/Lições Site.png" alt="Ícone representando a ferramenta de lições do app ENSINAIS, um local onde o usuárior realizará lições divididas em tópicos " />
+                            <p>Lições</p>
+                        </div>
+                        <div class="bloco-icon">
+                            <img class="icon-app" src="./imagens/Troféu Site.png" alt="Ícone representando " />
+                            <p>Níveis</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -169,7 +180,7 @@ new Chart(ctx, {
                     <a href="https://wa.link/tcarki" target="_blank">
                         <img src="/imagens/Ícone Whatsapp.png" alt="Ícone" class="footer-icon">
                     </a>
-                    <p>Nos contate pelo email ou whatsapp!</p>
+                    <p>Nos contate pelo <strong>e-mail</strong> ou <strong>whatsapp!</strong></p>
                 </div>
             </div>
         </footer>
