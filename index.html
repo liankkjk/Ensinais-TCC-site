@@ -21,8 +21,8 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="/imagens/Logo completa.png" alt="Logo" width="160" height="60"
-                        class="d-inline-block align-text-top">
+                    <img src="/imagens/Logo completa.png" alt="Logo"
+                        class="d-inline-block align-text-top img-fluid logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -43,13 +43,13 @@
     <!-- Gráfico -->
     <div class="fundo-pag">
         <div id="bg-text">
-            <div class="img-grafico-container">
+            <div class="container img-grafico">
                     <img id="img-mascote" src="./imagens/Jonathan Site.png" alt="Imagem do mascote Jonathan, um sagui de pelos e olhos amarelos que usa uma camiseta azul com o sinal para a letra S em LIBRAS estampada. Jonathan está apontando ao gráfico ao lado direito.">
                 <div class="grafico-container">
                     <div id="bloco-grafico">
                         <p class="grafico-titulo">Gráfico representando a comunidade surda no Brasil:</p>
                     <div class="grafico">
-                        <canvas alt="Um gráfico apresentando a quantidade de deficientes auditivos no Brasil. " id="grafico1"></canvas>
+                        <canvas alt="Um gráfico apresentando a quantidade de deficientes auditivos no Brasil." id="grafico1"></canvas>
                     </div>
                         <span id="fonte-txt">Fonte: <a href="https://www.al.sp.gov.br/noticia/?23/09/2021/dia-internacional-da-linguagem-de-sinais-procura-promover-a-inclusao-de-pessoas-surdas-" target="_blank">www.al.sp.gov.br</a></span>
                     </div>
@@ -138,26 +138,32 @@
         </div>
         <!-- Conteúdo principal da página(informações, download etc) -->
         <main>
-            <div class="bloco-sobre" id="Sobre">
+            <section id="seção-sobre">
+            <div class="container col-md-12 bloco-sobre" id="Sobre">
                 <div class="conteúdo">
-                    <h4 class="título">Sobre o ENSINAIS</h4>
-                    <p> O <strong>ENSINAIS - #SinalizandoConhecimento</strong> é um aplicativo mobile que busca ensinar a <strong>Língua Brasileira de Sinais</strong> para todos que desejam aprendê-la.</p>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="row mb-4 título">Sobre o ENSINAIS</h4>
+                            <p> O <strong>ENSINAIS - #SinalizandoConhecimento</strong> é um aplicativo mobile que busca ensinar a <strong>Língua Brasileira de Sinais</strong> para todos que desejam aprendê-la.</p>
+                        </div>
+                    </div>
                     <div class="icones">
                         <div class="bloco-icon">
-                            <img class="icon-app" src="./imagens/Sinalário Site.png" alt="Ícone representando a ferramenta de sinalário do app ENSINAIS, um local onde o usuário poderá consultar sinais caso esteja com dúvida." />
+                            <img class="img-fluid mb-2 flex-wrap icon-app" src="./imagens/Sinalário Site.png" alt="Ícone representando a ferramenta de sinalário do app ENSINAIS, um local onde o usuário poderá consultar sinais caso esteja com dúvida." />
                             <p>Sinalário</p>
                         </div>
                         <div class="bloco-icon">
-                                <img class="icon-app" src="./imagens/Lições Site.png" alt="Ícone representando a ferramenta de lições do app ENSINAIS, um local onde o usuárior realizará lições divididas em tópicos " />
+                                <img class="img-fluid mb-2 flex-wrap icon-app" src="./imagens/Lições Site.png" alt="Ícone representando a ferramenta de lições do app ENSINAIS, um local onde o usuárior realizará lições divididas em tópicos " />
                             <p>Lições</p>
                         </div>
                         <div class="bloco-icon">
-                            <img class="icon-app" src="./imagens/Troféu Site.png" alt="Ícone representando " />
+                            <img class="img-fluid mb-2 flex-wrap icon-app" src="./imagens/Troféu Site.png" alt="Ícone representando " />
                             <p>Níveis</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
             <div class="bloco-download" id="Download">
                 <div class="conteúdo">
