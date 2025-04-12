@@ -6,7 +6,6 @@ O site irá abordar mais sobre o nosso app, contando mais sobre o app e contendo
 
 Devs:
 Enzo Lian,
-Natanael Morandim,
 Ana Laura Ribeiro,
 Raíssa Pinheiro,
 Nicolas Roberto e
